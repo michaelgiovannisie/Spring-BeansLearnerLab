@@ -2,6 +2,7 @@ package com.example.demo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Iterator;
 
 public abstract class People<PersonType extends Person> implements Iterable<PersonType>{
     List<PersonType> personList;
@@ -51,6 +52,11 @@ public abstract class People<PersonType extends Person> implements Iterable<Pers
 
     public List<PersonType> findAll() {
         return personList;
+    }
+
+    @Override
+    public Iterator<PersonType> iterator() {
+        return personList.iterator();
     }
 
 }

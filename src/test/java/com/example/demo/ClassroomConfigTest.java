@@ -13,25 +13,25 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class StudentConfigTest {
+public class ClassroomConfigTest {
 
     @Autowired
-    @Qualifier("students")
-    private Students students;
+    @Qualifier("currentCohort")
+    private Classroom currentCohort;
 
     @Autowired
-    @Qualifier("previousStudents")
-    private Students previousStudents;
+    @Qualifier("previousCohort")
+    private Classroom previousCohort;
 
     @Test
-    public void testCurrentStudents() {
-        assertNotNull(students);
-        assertEquals(3, students.size());
+    public void testCurrentCohort() {
+        assertNotNull(currentCohort);
+        assertEquals(3, currentCohort.getStudents().size());
     }
 
     @Test
-    public void testPreviousStudents() {
-        assertNotNull(previousStudents);
-        assertEquals(3, previousStudents.size());
+    public void testPreviousCohort() {
+        assertNotNull(previousCohort);
+        assertEquals(3, previousCohort.getStudents().size());
     }
 }
